@@ -56,7 +56,7 @@ app.get("/:formId/filteredResponses", async (req, res) => {
     });
 
     // Paginate responses and send response
-    const totalResponses = filteredResponses.length;
+    const totalResponses = filteredResponses ? filteredResponses.length : 0;
     const pageCount = 1;
 
     res.json({
