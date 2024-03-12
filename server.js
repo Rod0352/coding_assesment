@@ -31,8 +31,8 @@ app.get("/:formId/filteredResponses", async (req, res) => {
       });
 
     // Apply filters to responses
-    const filteredResponses = response.responses.filter((response) => {
-      return filters.every((filter) => {
+    const filteredResponses = response.responses?.filter((response) => {
+      return filters.forEach((filter) => {
         // Find question in response via filter id
         const question = response.questions.find(
           (question) => question.id === filter.id
